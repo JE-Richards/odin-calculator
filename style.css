@@ -1,0 +1,115 @@
+/* Multi-section Styling */
+* {
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.header, .footer, .content {
+    background-color: #212A31;
+}
+
+/* Header and Content Styling */
+h1 {
+    color: #D3D9D4;
+    font-size: 36px;
+}
+
+p {
+    color: #D3D9D4;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+/* Page Div Styling */
+.page {
+    background-color: #124E66;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+/* Calculator Styling */
+.calculator {
+    background-color: #748D92;
+    border: solid 2px #212A31;
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.funcBttn {
+    background-color: #124E66;
+    border: solid 2px #212A31;
+    color: #D3D9D4;
+}
+
+.numBttn {
+    background-color: #D3D9D4;
+    color: #212A31
+}
+
+.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive {
+    display: flex;
+    margin: 5px 0px 0px 0px;
+}
+
+#clear {
+    flex: 2;
+}
+
+#backspace {
+    flex: 2;
+}
+
+#numZero {
+    flex: 2;
+}
+
+button {
+    font-size: 24px;
+    border-radius: 8px;
+}
+
+.displayScreen {
+    background-color: #D3D9D4;
+    border: solid 2px black;
+    border-radius: 8px;
+    text-align: end;
+    font-size: 28px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+/* Footer Styling */
+.footer {
+    display: flex;
+    margin-top: auto;
+}
+
+/*-----------------------------*\
+|        Colour Palette         |
+|                               |
+|  #212A31 - Darker Grey        | 
+|  #2E3944 - Medium Grey        |
+|  #124E66 - Grey Blue          |
+|  #748D92 - Light Blue Grey    |
+|  #D3D9D4 - Very Light Grey    |
+|                               |
+\*-----------------------------*/
