@@ -99,6 +99,9 @@ bttnDivide.addEventListener('click', () => {
         update();
         return operator, previousInput, currentInput;
     }
+    else {
+        return operator = divide;
+    }
 });
 
 bttnMultiply.addEventListener('click', () => {
@@ -115,6 +118,9 @@ bttnMultiply.addEventListener('click', () => {
         operator = multiply;
         update();
         return operator, previousInput, currentInput;
+    }
+    else {
+        return operator = multiply;
     }
 });
 
@@ -133,6 +139,9 @@ bttnSubtract.addEventListener('click', () => {
         update();
         return operator, previousInput, currentInput;
     }
+    else {
+        return operator = subtract;
+    }
 });
 
 bttnAddition.addEventListener('click', () => {
@@ -149,6 +158,9 @@ bttnAddition.addEventListener('click', () => {
         operator = addition;
         update();
         return operator, previousInput, currentInput;
+    }
+    else {
+        return operator = addition;
     }
 });
 
