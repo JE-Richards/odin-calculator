@@ -87,7 +87,7 @@ button {
     border-radius: 8px;
 }
 
-.displayScreen {
+#displayScreen {
     background-color: #D3D9D4;
     border: solid 2px black;
     border-radius: 8px;

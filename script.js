@@ -29,6 +29,19 @@ const operate = function(inputOne, inputTwo, operator) {
     return operator(inputOne, inputTwo);
 }
 
+// Update function to refresh the screen display
+const update = function() {
+    if (currentInput === '' && previousInput === '') {
+        displayScreen.innerHTML = currentInput;
+    }
+    else if (currentInput === '' && previousInput !== '') {
+        displayScreen.innerHTML = previousInput;
+    }
+    else {
+        displayScreen.innerHTML = currentInput;
+    }
+};
+
 // Select all elements in the calculator that need to be modified or receive an event listener
 // const bttnZero = document.querySelector("#numZero");
 // const bttnOne = document.querySelector("#numOne");
@@ -52,27 +65,12 @@ const bttnEquals = document.querySelector("#equals");
 const displayScreen = document.querySelector("#displayScreen");
 
 
-// Add event listeners to each button to append button text to current input string
+// Add event listeners to each button to append button text to current input string and update display screen
 bttnNum.forEach(element => {
     element.addEventListener('click', x => {
         let bttn = x.target;
-        return currentInput = currentInput + bttn.textContent;
+        currentInput = currentInput + bttn.textContent;
+        update();
+        return currentInput;
     })
 });
-
-
-// Add numbers input by user to calculator screen
-if (currentInput === '' && previousInput === '') {
-    displayScreen.innerHTML = currentInput;
-}
-else if (currentInput === '' && previousInput !== '') {
-    displayScreen.innerHTML = previousInput;
-}
-else {
-    displayScreen.innerHTML = currentInput;
-}
-
-
-
-
-
