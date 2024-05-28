@@ -18,7 +18,7 @@ const multiply = function(a, b) {
 
 const divide = function(a, b) {
     if (Number(b) === 0) {
-        return "Error! Can't divide by 0";
+        return "Error!";
     }
     else {
         return Number(a) / Number(b);
@@ -85,35 +85,71 @@ bttnBackspace.addEventListener('click', () => {
 
 // Add functionality to mathematical operation buttons
 bttnDivide.addEventListener('click', () => {
-    operator = divide;
-    previousInput = currentInput;
-    currentInput = '';
-    update()
-    return operator, previousInput, currentInput;
+    if (currentInput != '' && previousInput === '') {
+        operator = divide;
+        previousInput = currentInput;
+        currentInput = '';
+        update()
+        return operator, previousInput, currentInput;
+    }
+    else if (currentInput != '' && previousInput != '') {
+        previousInput = operate(previousInput, currentInput, operator);
+        currentInput = '';
+        operator = divide;
+        update();
+        return operator, previousInput, currentInput;
+    }
 });
 
 bttnMultiply.addEventListener('click', () => {
-    operator = multiply;
-    previousInput = currentInput;
-    currentInput = '';
-    update();
-    return operator, previousInput, currentInput;
+    if (currentInput != '' && previousInput === '') {
+        operator = multiply;
+        previousInput = currentInput;
+        currentInput = '';
+        update()
+        return operator, previousInput, currentInput;
+    }
+    else if (currentInput != '' && previousInput != '') {
+        previousInput = operate(previousInput, currentInput, operator);
+        currentInput = '';
+        operator = multiply;
+        update();
+        return operator, previousInput, currentInput;
+    }
 });
 
 bttnSubtract.addEventListener('click', () => {
-    operator = subtract;
-    previousInput = currentInput;
-    currentInput = '';
-    update()
-    return operator, previousInput, currentInput;
+    if (currentInput != '' && previousInput === '') {
+        operator = subtract;
+        previousInput = currentInput;
+        currentInput = '';
+        update()
+        return operator, previousInput, currentInput;
+    }
+    else if (currentInput != '' && previousInput != '') {
+        previousInput = operate(previousInput, currentInput, operator);
+        currentInput = '';
+        operator = subtract;
+        update();
+        return operator, previousInput, currentInput;
+    }
 });
 
 bttnAddition.addEventListener('click', () => {
-    operator = addition;
-    previousInput = currentInput;
-    currentInput = '';
-    update()
-    return operator, previousInput, currentInput;
+    if (currentInput != '' && previousInput === '') {
+        operator = addition;
+        previousInput = currentInput;
+        currentInput = '';
+        update()
+        return operator, previousInput, currentInput;
+    }
+    else if (currentInput != '' && previousInput != '') {
+        previousInput = operate(previousInput, currentInput, operator);
+        currentInput = '';
+        operator = addition;
+        update();
+        return operator, previousInput, currentInput;
+    }
 });
 
 bttnEquals.addEventListener('click', () => {
