@@ -56,7 +56,7 @@ p {
 
 .funcBttn {
     background-color: #124E66;
-    border: solid 2px #212A31;
+    /* border: solid 2px #212A31; */ /* commented out because borders don't change colour on click with this, figure out how to change colors*/
     color: #D3D9D4;
 }
 
