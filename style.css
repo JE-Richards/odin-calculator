@@ -6,6 +6,7 @@
 |  #124E66 - Grey Blue          |
 |  #748D92 - Light Blue Grey    |
 |  #D3D9D4 - Very Light Grey    |
+|  Aqua    - Aqua               |
 |                               |
 \*-----------------------------*/
 
@@ -29,6 +30,18 @@ body {
 
 .header, .footer, .content {
     background-color: #212A31;
+}
+
+a {
+    color:aqua;
+}
+
+a:hover {
+    color:#D3D9D4;
+}
+
+a:active {
+    color: red;
 }
 
 /* Header and Content Styling */
@@ -128,5 +141,6 @@ button {
 .footer {
     display: flex;
     margin-top: auto;
+    justify-content: center;
 }
 
