@@ -42,6 +42,14 @@ const update = function() {
     }
 };
 
+// Function to clear stored variable values
+const reset = function() {
+    currentInput = '';
+    previousInput = '';
+    operator = '';
+    update();
+}
+
 // Select all elements in the calculator that need to be modified or receive an event listener
 // const bttnZero = document.querySelector("#numZero");
 // const bttnOne = document.querySelector("#numOne");
@@ -55,7 +63,7 @@ const update = function() {
 // const bttnNine = document.querySelector("#numNine");
 const bttnPeriod = document.querySelector('#period');
 const bttnNum = document.querySelectorAll('.numBttn');
-const bttnac = document.querySelector("#ac");
+const bttnAc = document.querySelector("#ac");
 const bttnBackspace = document.querySelector("#backspace");
 const bttnDivide = document.querySelector("#divide");
 const bttnMultiply = document.querySelector("#multiply");
@@ -74,3 +82,13 @@ bttnNum.forEach(element => {
         return currentInput;
     })
 });
+
+// Add functionality to clear (AC) button
+bttnAc.addEventListener('click', reset);
+
+// Add functionality to backspace button
+bttnBackspace.addEventListener('click', () => {
+    currentInput = currentInput.slice(0, -1);
+    update();
+    return currentInput;
+})
