@@ -51,16 +51,6 @@ const reset = function() {
 }
 
 // Select all elements in the calculator that need to be modified or receive an event listener
-// const bttnZero = document.querySelector("#numZero");
-// const bttnOne = document.querySelector("#numOne");
-// const bttnTwo = document.querySelector("#numTwo");
-// const bttnThree = document.querySelector("#numThree");
-// const bttnFour = document.querySelector("#numFour");
-// const bttnFive = document.querySelector("#numFive");
-// const bttnSix = document.querySelector("#numSix");
-// const bttnSeven = document.querySelector("#numSeven");
-// const bttnEight = document.querySelector("#numEight");
-// const bttnNine = document.querySelector("#numNine");
 const bttnPeriod = document.querySelector('#period');
 const bttnNum = document.querySelectorAll('.numBttn');
 const bttnAc = document.querySelector("#ac");
@@ -132,4 +122,24 @@ bttnEquals.addEventListener('click', () => {
     operator = '';
     update();
     return previousInput, currentInput, operator;
+});
+
+// Add functionality to period button
+// Use regex to detect if a period is present
+// Regex logic:
+// \. is used to find a period. As . takes a special meaning in regex, we use \ to escape the meaning
+// /g means global and returns an array containing all elements that match the regex, but doesn't return capturing groups
+bttnPeriod.addEventListener('click', x => {
+    let containPeriod = currentInput.match(/\./g);
+    let bttn = x.target;
+
+    if (containPeriod === null) {
+        currentInput = currentInput + bttn.textContent;
+        update();
+        return currentInput;
+    }
+    else {
+        update();
+        return currentInput;
+    }
 });
