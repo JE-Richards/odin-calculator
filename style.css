@@ -1,3 +1,19 @@
+/*-----------------------------*\
+|        Colour Palette         |
+|                               |
+|  #212A31 - Darker Grey        | 
+|  #2E3944 - Medium Grey        |
+|  #124E66 - Grey Blue          |
+|  #748D92 - Light Blue Grey    |
+|  #D3D9D4 - Very Light Grey    |
+|                               |
+\*-----------------------------*/
+
+/*-----------------------------*\
+|           Webpage             |
+|           Styling             |
+\*-----------------------------*/
+
 /* Multi-section Styling */
 * {
     font-family: Helvetica, sans-serif;
@@ -52,39 +68,8 @@ p {
     flex-direction: column; 
     padding: 10px;
     border-radius: 8px;
-}
-
-.funcBttn {
-    background-color: #124E66;
-    /* border: solid 2px #212A31; */ /* commented out because borders don't change colour on click with this, figure out how to change colors*/
-    color: #D3D9D4;
-}
-
-.numBttn {
-    background-color: #D3D9D4;
-    color: #212A31
-}
-
-.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive {
-    display: flex;
-    margin: 5px 0px 0px 0px;
-}
-
-#clear {
-    flex: 2;
-}
-
-#backspace {
-    flex: 2;
-}
-
-#numZero {
-    flex: 2;
-}
-
-button {
-    font-size: 24px;
-    border-radius: 8px;
+    height: 300px;
+    width: 200px;
 }
 
 #displayScreen {
@@ -92,9 +77,51 @@ button {
     border: solid 2px black;
     border-radius: 8px;
     text-align: end;
-    font-size: 28px;
+    font-size: 46px;
     font-weight: 700;
-    padding: 5px;
+    padding: 5px 5px 11px 5px;
+    height: 45px;
+    width: 186px;
+    flex: 1 0 100%;
+}
+
+.rowOne, .rowTwo, .rowThree, .rowFour, .rowFive {
+    display: flex;
+    margin: 5px 0px 0px 0px;
+    gap: 5px;
+}
+
+button {
+    font-size: 30px;
+    border-radius: 8px;
+}
+
+.funcBttn {
+    background-color: #124E66;
+    color: #D3D9D4;
+    flex: 1;
+}
+
+.numBttn, #period {
+    background-color: #D3D9D4;
+    color: #212A31;
+    flex: 1;
+}
+
+#backspace, #ac {
+    flex: 1;
+}
+
+#divide, #numZero, #period {
+    max-width: 46.25px;
+}
+
+.funcBttn:active {
+    border: 2px solid #D3D9D4;
+}
+
+.numBttn:active, #period:active {
+    border: 2px solid #2E3944;
 }
 
 /* Footer Styling */
@@ -103,13 +130,3 @@ button {
     margin-top: auto;
 }
 
-/*-----------------------------*\
-|        Colour Palette         |
-|                               |
-|  #212A31 - Darker Grey        | 
-|  #2E3944 - Medium Grey        |
-|  #124E66 - Grey Blue          |
-|  #748D92 - Light Blue Grey    |
-|  #D3D9D4 - Very Light Grey    |
-|                               |
-\*-----------------------------*/
