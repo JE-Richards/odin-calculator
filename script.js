@@ -66,6 +66,9 @@ const displayScreen = document.querySelector("#displayScreen");
 // Add event listeners to each button to append button text to current input string and update display screen
 bttnNum.forEach(element => {
     element.addEventListener('click', x => {
+        if (currentInput === '' && previousInput != '' && operator === '') {
+            reset();
+        }
         let bttn = x.target;
         currentInput = currentInput + bttn.textContent;
         update();
