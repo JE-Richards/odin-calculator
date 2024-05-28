@@ -5,23 +5,23 @@ let operator = '';
 
 // Functions for each mathematical operation on the calculator
 const addition = function(a, b) {
-    return a + b;
+    return Number(a) + Number(b);
 }
 
 const subtract = function(a, b) {
-    return a - b;
+    return Number(a) - Number(b);
 }
 
 const multiply = function(a, b) {
-    return a * b;
+    return Number(a) * Number(b);
 }
 
 const divide = function(a, b) {
-    if (b === 0) {
+    if (Number(b) === 0) {
         return "Error! Can't divide by 0";
     }
     else {
-        return a / b;
+        return Number(a) / Number(b);
     }
 }
 
@@ -92,3 +92,44 @@ bttnBackspace.addEventListener('click', () => {
     update();
     return currentInput;
 })
+
+// Add functionality to mathematical operation buttons
+bttnDivide.addEventListener('click', () => {
+    operator = divide;
+    previousInput = currentInput;
+    currentInput = '';
+    update()
+    return operator, previousInput, currentInput;
+});
+
+bttnMultiply.addEventListener('click', () => {
+    operator = multiply;
+    previousInput = currentInput;
+    currentInput = '';
+    update();
+    return operator, previousInput, currentInput;
+});
+
+bttnSubtract.addEventListener('click', () => {
+    operator = subtract;
+    previousInput = currentInput;
+    currentInput = '';
+    update()
+    return operator, previousInput, currentInput;
+});
+
+bttnAddition.addEventListener('click', () => {
+    operator = addition;
+    previousInput = currentInput;
+    currentInput = '';
+    update()
+    return operator, previousInput, currentInput;
+});
+
+bttnEquals.addEventListener('click', () => {
+    previousInput = operate(previousInput, currentInput, operator);
+    currentInput = '';
+    operator = '';
+    update();
+    return previousInput, currentInput, operator;
+});
