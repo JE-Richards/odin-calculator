@@ -168,11 +168,13 @@ bttnAddition.addEventListener('click', () => {
 });
 
 bttnEquals.addEventListener('click', () => {
-    previousInput = operate(previousInput, currentInput, operator);
-    currentInput = '';
-    operator = '';
-    update();
-    return previousInput, currentInput, operator;
+    if (previousInput != '' && currentInput != '' && operator != '') {
+        previousInput = operate(previousInput, currentInput, operator);
+        currentInput = '';
+        operator = '';
+        update();
+        return previousInput, currentInput, operator;
+    }
 });
 
 // Add functionality to period button
