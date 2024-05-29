@@ -1,4 +1,4 @@
-Calculator: An Introductory JavaScript Project
+# Calculator: An Introductory JavaScript Project
 
 ## Table of Contents
 1. [Overview](#overview)
